@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.3" method="upgrade">
+        <name>Sandbox</name>
+        <!-- The following elements are optional and free of formatting constraints -->
+        <creationDate>May 2014 - Jan 2015</creationDate>
+        <author>Luca Vercelli</author>
+        <authorEmail>luca.vercelli.to@gmail.com</authorEmail>
+        <authorUrl></authorUrl>
+        <copyright></copyright>
+        <license>GNU GPL v3 or later</license>
+        <!--  The version string is recorded in the components table -->
+        <version>0.0.2</version>
+        <!-- The description is optional and defaults to the name -->
+        <description>Webapp to create a sandbox clone of the site. Developed for Joomla 3.3.</description>
+ 
+        <update> <!-- Runs on update; New in 2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql</schemapath>
+                </schemas>
+        </update>
+ 
+        <!-- Site Main File Copy Section -->
+        <!-- Note the folder attribute: This attribute describes the folder
+                to copy FROM in the package to install therefore files copied
+                in this section are copied from /site/ in the package -->
+        <!--files folder="site">
+                <filename>index.html</filename>
+                <filename>helloworld.php</filename>
+        </files-->
+ 
+        <administration>
+                <!-- Administration Menu Section -->
+                <menu>COM_SANDBOX</menu>
+                <!-- Administration Main File Copy Section -->
+                <!-- Note the folder attribute: This attribute describes the folder
+                        to copy FROM in the package to install therefore files copied
+                        in this section are copied from /admin/ in the package -->
+                <files folder="admin">
+                        <!-- Admin Main File Copy Section -->
+                        <filename>index.html</filename>
+                        <filename>sandbox.php</filename>
+                        <filename>index.html</filename>
+                        <filename>helper.php</filename>
+                        <filename>controller.php</filename>
+                        <filename>views/sandbox/view.html.php</filename>
+                        <filename>views/sandbox/index.html</filename>
+                        <filename>views/sandbox/tmpl/default.php</filename>
+                        <filename>views/sandbox/tmpl/index.html</filename>
+                        <filename>views/sandbox_work/view.html.php</filename>
+                        <filename>views/sandbox_work/index.html</filename>
+                        <filename>views/sandbox_work/tmpl/default.php</filename>
+                        <filename>views/sandbox_work/tmpl/index.html</filename>
+                        <!-- SQL files section -->
+                        <folder>sql</folder>
+                </files>
+		
+		<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.com_sandbox.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_sandbox.sys.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_sandbox.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_sandbox.sys.ini</language>
+		</languages>
+		
+        </administration>
+ 
+</extension>

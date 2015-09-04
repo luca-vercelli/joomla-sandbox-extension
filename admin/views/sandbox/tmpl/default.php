@@ -19,6 +19,7 @@ This procedure will create a sandbox copy of your site.<br>
 All files will be copied in subfolder <code><?php echo SANDBOX_FOLDER; ?></code>.<br>
 All tables will be cloned with <code><?php echo SANDBOX_PREFIX; ?></code> prefix.<br>
 New site will be accessible at address: <code><?php echo JURI::root().SANDBOX_FOLDER; ?></code>.<br>
+<b>Warning:</b> the two sites will share the same cookies. So, you should not use the two sites with the same browser.<br>
 </p>
 
 <p> Checking if Sandbox site already exists:<br>

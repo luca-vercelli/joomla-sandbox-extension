@@ -1,0 +1,9 @@
+
+0.0.3:
+* avoid copying files larger than 10.000.000 bytes.
+* warning message about cookies 
+
+0.0.2:
+* fixed some issues on setup. I guess that the "bad" behaviours described in reviews are due to an incomplete setup.
+
+

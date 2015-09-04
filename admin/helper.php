@@ -5,6 +5,7 @@
 define("SANDBOX_FOLDER", 'sandbox');
 define("SANDBOX_PREFIX", 'sandbox_');
 define("SANDBOX_FULL_PATH", JPATH_SITE.'/'.SANDBOX_FOLDER);  //
+define("SIZE_LIMIT", 10000000);
 
 class comSandboxHelper
 {
@@ -106,8 +107,10 @@ class comSandboxHelper
                 if ( is_dir($src . '/' . $file) ) { 
                     comSandboxHelper::recurseCopy($src . '/' . $file,$dst . '/' . $file); 
                 } 
-                else { 
-                    copy($src . '/' . $file,$dst . '/' . $file); 
+                else {
+                    if ( filesize($src . '/' . $file) < SIZE_LIMIT ) {
+                        copy($src . '/' . $file, $dst . '/' . $file); 
+                    }
                 } 
             } 
         } 
@@ -128,7 +131,9 @@ class comSandboxHelper
                     comSandboxHelper::recurseCopy($src . '/' . $file,$dst . '/' . $file); 
                 } 
                 else { 
-                    copy($src . '/' . $file,$dst . '/' . $file); 
+                    if ( filesize($src . '/' . $file) < SIZE_LIMIT ) {
+                        copy($src . '/' . $file, $dst . '/' . $file); 
+                    }
                 } 
             } 
         } 

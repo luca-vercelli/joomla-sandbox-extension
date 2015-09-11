@@ -7,7 +7,7 @@ JHtml::_('behavior.framework');
 $this
 
 ?>
-<h1>Sandbox copy</h1>
+<h1><?php echo JText::_('COM_SANDBOX_MESSAGE_TITLE');?></h1>
 
 <?php if ($this->next != "") { ?>
 
@@ -21,10 +21,10 @@ document.body.onload = function(){
 }
 </script>
 
-<p>Work in progress...</p>
+<p><?php echo JText::_('COM_SANDBOX_MESSAGE_WORK_IN_PROGRESS');?></p>
 
 <?php } else { ?>
-<p>All done.</p>
+<p><?php echo JText::_('COM_SANDBOX_MESSAGE_ALL_DONE');?></p>
 
 <?php } ?>
 

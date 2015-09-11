@@ -27,8 +27,8 @@ class SandboxController extends JControllerLegacy
         comSandboxHelper::performFileCopy();
         comSandboxHelper::updateConfigPHP();
         
-        JFactory::getApplication()->enqueueMessage(JText::_('Done.'));
-        JFactory::getApplication()->enqueueMessage("<A href=\"". JURI::root() .SANDBOX_FOLDER. "\" target=\"_blank\">".JText::_("Access sandbox site")."</A>");
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DONE'));
+        JFactory::getApplication()->enqueueMessage("<A href=\"". JURI::root() .SANDBOX_FOLDER. "\" target=\"_blank\">".JText::_("COM_SANDBOX_MESSAGE_ACCESS")."</A>");
         
         JControllerLegacy::display();
     }
@@ -36,85 +36,85 @@ class SandboxController extends JControllerLegacy
     //create - step 0
     public function create() {
         comSandboxHelper::dropSandboxTables();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
         JControllerLegacy::display();
     }
     
     //create - step 1
     public function fs_clean() {
         comSandboxHelper::prepareSandboxFolder();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
         JControllerLegacy::display();
     }
     
     //create - step 2
     public function db_copy() {
         comSandboxHelper::performDatabaseCopy();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
         JControllerLegacy::display();
     }
     
     //create - step 3
     public function fs_copy_frontend() {
         comSandboxHelper::performFileCopyFrontend();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Frontend files copied.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_FE_COPIED'));
         JControllerLegacy::display();
     }
     
     //create - step 4
     public function config_php() {
         comSandboxHelper::updateConfigPHP();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Frontend files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Configuration.php updated.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_FE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_CONFIGPHP'));
         JControllerLegacy::display();
     }
     
     //create - step 5
     public function fs_copy_admin() {
         comSandboxHelper::performFileCopyAdmin();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Frontend files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Configuration.php updated.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Admin files copied.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_FE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_CONFIGPHP'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_BE_COPIED'));
         JControllerLegacy::display();
     }
     
     //create - step 6
     public function fs_copy_images() {
         comSandboxHelper::performFileCopyImages();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Frontend files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Configuration.php updated.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Admin files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Images copied.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_FE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_CONFIGPHP'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_BE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_IM_COPIED'));
         JControllerLegacy::display();
     }
     
     //create - step 7
     public function fs_copy_media() {
         comSandboxHelper::performFileCopyMedia();
-        JFactory::getApplication()->enqueueMessage(JText::_('Database clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Sandbox folder clean.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Database copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Frontend files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Configuration.php updated.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Admin files copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Images copied.'));
-        JFactory::getApplication()->enqueueMessage(JText::_('Media copied.'));
-        JFactory::getApplication()->enqueueMessage("<A href=\"". JURI::root() .SANDBOX_FOLDER. "\" target=\"_blank\">".JText::_("Access sandbox site")."</A>");
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_SF_CLEAN'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DB_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_FE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_CONFIGPHP'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_BE_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_IM_COPIED'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_MEDIA_COPIED'));
+        JFactory::getApplication()->enqueueMessage("<A href=\"". JURI::root() .SANDBOX_FOLDER. "\" target=\"_blank\">".JText::_("COM_SANDBOX_MESSAGE_ACCESS")."</A>");
         JControllerLegacy::display();
     }
     
@@ -124,7 +124,7 @@ class SandboxController extends JControllerLegacy
             comSandboxHelper::recurseDelete(SANDBOX_FULL_PATH, true);
         }
         
-        JFactory::getApplication()->enqueueMessage(JText::_('Done.'));
+        JFactory::getApplication()->enqueueMessage(JText::_('COM_SANDBOX_MESSAGE_DONE'));
         
         JControllerLegacy::display();
     }

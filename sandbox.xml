@@ -9,7 +9,7 @@
         <copyright></copyright>
         <license>GNU GPL v3 or later</license>
         <!--  The version string is recorded in the components table -->
-        <version>0.0.3</version>
+        <version>0.0.4</version>
         <!-- The description is optional and defaults to the name -->
         <description>Webapp to create a sandbox clone of the site. Developed for Joomla 3.3.</description>
  

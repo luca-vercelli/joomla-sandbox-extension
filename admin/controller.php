@@ -1,6 +1,9 @@
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
+// This is for debug (I don't think it's dangerous, user is admin)
+ini_set('display_error','On');
  
 // import Joomla controller library
 jimport('joomla.application.component.controller');

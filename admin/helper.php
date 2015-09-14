@@ -19,7 +19,7 @@ class comSandboxHelper
     
     public static function getTablesPrefix() //including '_'
     {
-      $db =& JFactory::getDBO(); //Returns a reference to the global database object
+      $db = JFactory::getDBO(); //Returns a reference to the global database object
       return $db->getPrefix();
     }
     
